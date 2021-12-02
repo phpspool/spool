@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
+define('LARAVEL_START', microtime(true));
+
+require __DIR__ . '/vendor/autoload.php';
+
+$app = new Application('Spool', 'v0.0.1');
+$app->register('crontabs')
+    ->addArgument('start', InputArgument::OPTIONAL, 'input you name')
+    ->setDescription('')
+    ->setHelp('spool')
+    ->setCode(
+        function (InputInterface $input, OutputInterface $output) {
+            $name = $input->getArgument('start');
+            $message = 'hello: ' . $name;
+            $output->writeln('<info>' . $message . '</info>');
+        }
+    );
+$app->run();

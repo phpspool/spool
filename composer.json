@@ -1,0 +1,24 @@
+{
+    "name": "phpspool/crontabs",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "yydick",
+            "email": "yydick@sohu.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+      "php": ">=7.4",
+        "symfony/console": "5.4.x-dev"
+    },
+    "autoload": {
+      "psr-4": {
+        "Spool\\Formwork\\": "src/Formwork",
+        "Spool\\Crontabs\\": "src/Crontabs"
+      },
+      "files": [
+          "src/Formwork/Functions.php"
+      ]
+    }
+}
