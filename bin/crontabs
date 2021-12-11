@@ -7,9 +7,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 define('SPOOL_CRONTABS_START', microtime(true));
-define('BASE_PATH', __DIR__);
 
-require __DIR__ . '/vendor/autoload.php';
+require BASE_PATH . '/vendor/autoload.php';
 
 $app = new Application('Spool-Crontabs', 'v0.0.1');
 $app->register('start')
@@ -19,7 +18,7 @@ $app->register('start')
     ->setCode(
         function (InputInterface $input, OutputInterface $output) {
             $name = $input->getArgument('start');
-            $message = 'hello: ' . $name . ' ' . BASE_PATH . env('sss');
+            $message = 'hello: ' . $name . ' ' . BASE_PATH . env('sss', '111');
             $output->writeln('<info>' . $message . '</info>');
         }
     );

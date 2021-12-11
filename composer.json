@@ -10,15 +10,23 @@
     "minimum-stability": "dev",
     "require": {
       "php": ">=7.4",
-        "symfony/console": "5.4.x-dev"
+        "symfony/console": "5.4.x-dev",
+        "symfony/config": "5.4.x-dev",
+        "phpunit/phpunit": "9.5.x-dev",
+        "symfony/yaml": "5.4.x-dev",
+        "psr/log": "^1.1"
     },
     "autoload": {
       "psr-4": {
-        "Spool\\Formwork\\": "src/Formwork",
-        "Spool\\Crontabs\\": "src/Crontabs"
+        "Spool\\": "src/"
       },
       "files": [
           "src/Formwork/Functions.php"
       ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
     }
 }
